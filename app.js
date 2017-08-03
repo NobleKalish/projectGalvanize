@@ -53,7 +53,15 @@ $(document).ready(function() {
     stealth = 0;
     health = 5;
     magic = 0;
-    statShow();
+    $("#strength").append(strength);
+    $("#stamina").append(stamina);
+    $("#damage").append(damage);
+    $("#armor").append(armor);
+    $("#range").append(range);
+    $("#speed").append(speed);
+    $("#health").append(health);
+    $("#stealth").append(stealth);
+    $("#magic").append(magic);
   });
   $(".archer").click(function() {
     firstQuest();
@@ -66,7 +74,15 @@ $(document).ready(function() {
     stealth = 7;
     health = 5;
     magic = 0;
-    statShow();
+    $("#strength").append(strength);
+    $("#stamina").append(stamina);
+    $("#damage").append(damage);
+    $("#armor").append(armor);
+    $("#range").append(range);
+    $("#speed").append(speed);
+    $("#health").append(health);
+    $("#stealth").append(stealth);
+    $("#magic").append(magic);
   });
   $(".mage").click(function() {
     firstQuest();
@@ -79,22 +95,20 @@ $(document).ready(function() {
     stealth = 5;
     health = 5;
     magic = 7;
-    statShow();
+    $("#strength").append(strength);
+    $("#stamina").append(stamina);
+    $("#damage").append(damage);
+    $("#armor").append(armor);
+    $("#range").append(range);
+    $("#speed").append(speed);
+    $("#health").append(health);
+    $("#stealth").append(stealth);
+    $("#magic").append(magic);
   });
   function firstQuest() {
     $(".choice").append($(".mainButton").text(""));
     $(".mainButton").removeClass("btn waves-effect waves-light mage archer warrior");
     $("h1").hide(1000);
   };
-  // function statShow(); {
-  //   $("#strength").append(strength);
-  //   $("#stamina").append(stamina);
-  //   $("#damage").append(damage);
-  //   $("#armor").append(armor);
-  //   $("#range").append(range);
-  //   $("#speed").append(speed);
-  //   $("#health").append(health);
-  //   $("#stealth").append(stealth);
-  //   $("#magic").append(magic);
-  // };
+
 });
