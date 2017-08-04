@@ -24,6 +24,7 @@ $(document).ready(function() {
     }),
     function(data) {
       console.log(data);
+      console.log(data.result.random.data[0]);
     });
   Materialize.updateTextFields();
   $('#name').click(function() {
@@ -146,11 +147,28 @@ $(document).ready(function() {
     $(".5").text("Still pretend to be def.");
     $(".6").text("Insult the man.");
   });
+
   function ending() {
     $(".choice2").append($(".choiceButton").text(""));
     $(".choiceButton").removeClass("btn waves-effect waves-light 1 2 3");
     $("h1").hide(1000);
     $("p").hide(1000);
-    $(".choiceButton").addClass("btn waves-effect waves-light");
+    $(".choiceButton2").addClass("btn waves-effect waves-light");
   };
+  $(".4").click(function() {
+    death();
+    if (strength >= data.result.random.data[0]) {
+      $(".question").append("<h1>You rush towards him and attack him!</h1>");
+    };
+    // else if (strength =< data.result.data[0]) {
+    //   $(".question").append("<h1>You rush towards him and attack him!</h1>");
+    // };
+  });
+
+  function death() {
+    $(".choice3").append($(".choiceButton2").text(""));
+    $(".choiceButton2").removeClass("btn waves-effect waves-light 1 2 3");
+    $("h1").hide(1000);
+    $("p").hide(1000);
+  }
 });
