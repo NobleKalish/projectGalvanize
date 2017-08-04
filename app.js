@@ -9,6 +9,7 @@ $(document).ready(function() {
   var health = 0;
   var magic = 0;
   var role = "";
+  var data;
   $.post("https://api.random.org/json-rpc/1/invoke", JSON.stringify({
       "jsonrpc": "2.0",
       "method": "generateIntegers",
@@ -22,7 +23,8 @@ $(document).ready(function() {
       },
       "id": 15309
     }),
-    function(data) {
+    function(pulledData) {
+      data = pulledData
       console.log(data);
       console.log(data.result.random.data[0]);
     });
@@ -159,10 +161,9 @@ $(document).ready(function() {
     death();
     if (strength >= data.result.random.data[0]) {
       $(".question").append("<h1>You rush towards him and attack him!</h1>");
+    } else {
+      $(".question").append("<h1>You rush towards him and attack him!</h1>");
     };
-    // else if (strength =< data.result.data[0]) {
-    //   $(".question").append("<h1>You rush towards him and attack him!</h1>");
-    // };
   });
 
   function death() {
