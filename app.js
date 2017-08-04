@@ -146,7 +146,7 @@ $(document).ready(function() {
     $(".question").append("<h1>He repeats what he said and appears annoyed and says...</h1>");
     $(".question").append("<p>I guess if you're deaf I can attack you, and you can't scream for help.</p>");
     $(".4").text("Ramble incoherently to the man while running at him!");
-    $(".5").text("Still pretend to be def.");
+    $(".5").text("Still pretend to be deaf.");
     $(".6").text("Insult the man.");
   });
 
@@ -157,13 +157,25 @@ $(document).ready(function() {
     $("p").hide(1000);
     $(".choiceButton2").addClass("btn waves-effect waves-light");
   };
-  $(".4").click(function() {
+  $(".fight").click(function() {
     death();
     if (strength >= data.result.random.data[0]) {
       $(".question").append("<h1>You rush towards him and attack him!</h1>");
+      $(".question").append("<p>He staggers and hesitates. You continue to rush him; pushing him  towards the cliff. You pull out your sword to finish him. He then dodges only to fall to your death.</p>");
     } else {
       $(".question").append("<h1>You rush towards him and attack him!</h1>");
+      $(".question").append("<p>He catches you and throws you back. On the ground he stands over you to finally end your life.</p>");
     };
+  });
+  $(".sneak").click(function() {
+    death();
+    if (stealth >= data.result.random.data[1]) {
+      $(".question").append("<h1>You try to sneak around him!</h1>");
+      $(".question").append("<p>He continues to speak as if you are still there. You continue to move around him. </p>");
+    } else {
+      $(".question").append("<h1>You rush towards him and attack him!</h1>");
+      $(".question").append("<p>He catches you and throws you back. On the ground he stands over you to finally end your life.</p>");
+    }
   });
 
   function death() {
@@ -171,5 +183,5 @@ $(document).ready(function() {
     $(".choiceButton2").removeClass("btn waves-effect waves-light 1 2 3");
     $("h1").hide(1000);
     $("p").hide(1000);
-  }
+  };
 });
