@@ -6,3 +6,7 @@ body {
   background-color: #25282d;
   color: #afb4bc;
 }
+
+p {
+  font-size: 20px;
+}

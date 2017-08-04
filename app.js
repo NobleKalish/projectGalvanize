@@ -8,6 +8,7 @@ $(document).ready(function() {
   var stealth = 0;
   var health = 0;
   var magic = 0;
+  var role = "";
   $.post("https://api.random.org/json-rpc/1/invoke", JSON.stringify({
       "jsonrpc": "2.0",
       "method": "generateIntegers",
@@ -43,7 +44,6 @@ $(document).ready(function() {
   };
 
   $(".warrior").click(function() {
-    firstQuest();
     strength = 6;
     stamina = 5;
     damage = 5;
@@ -62,9 +62,11 @@ $(document).ready(function() {
     $("#health").append(health);
     $("#stealth").append(stealth);
     $("#magic").append(magic);
+    role = "Warrior";
+    firstQuest();
+
   });
   $(".archer").click(function() {
-    firstQuest();
     strength = 4;
     stamina = 7;
     damage = 3;
@@ -83,9 +85,11 @@ $(document).ready(function() {
     $("#health").append(health);
     $("#stealth").append(stealth);
     $("#magic").append(magic);
+    role = "Archer";
+    firstQuest();
   });
   $(".mage").click(function() {
-    firstQuest();
+    role = "Mage";
     strength = 3;
     stamina = 3;
     damage = 5;
@@ -104,11 +108,40 @@ $(document).ready(function() {
     $("#health").append(health);
     $("#stealth").append(stealth);
     $("#magic").append(magic);
+    firstQuest();
   });
+
   function firstQuest() {
     $(".choice").append($(".mainButton").text(""));
     $(".mainButton").removeClass("btn waves-effect waves-light mage archer warrior");
     $("h1").hide(1000);
+    $(".question").append("<h1>I'm glad you are here great one!</h1>");
+    $(".question").append("<p>There are raiders attacking my village, and we need your help!</p>");
+    $(".choiceButton").addClass("btn waves-effect waves-light");
+    $(".1").text("Agree and follow the man.");
+    $(".2").text("Attack the man.");
+    $(".3").text("Pretend you're deaf");
   };
-
+  $(".1").click(function() {
+    ending();
+    $(".question").append("<h1>As he leads you away he turns aruond...</h1>");
+    $(".question").append("<p>Truth be told, I am the leader of the bandits. I found you and wanted to play a little game. Since you are here, I realized I wanted to fight you now instead; prepare to fight!</p>");
+  });
+  $(".2").click(function() {
+    ending();
+    $(".question").append("<h1>He looks at you confused only to tell you...</h1>");
+    $(".question").append("<p>I was going to kill you when we reached the village, but I can do it right now!</p>");
+  });
+  $(".3").click(function() {
+    ending();
+    $(".question").append("<h1>He repeats what he said and appears annoyed and says...</h1>");
+    $(".question").append("<p></p>");
+  });
+  function ending() {
+    $(".choice2").append($(".choiceButton").text(""));
+    $(".choiceButton").removeClass("btn waves-effect waves-light 1 2 3");
+    $("h1").hide(1000);
+    $("p").hide(1000);
+    $(".choiceButton").addClass("btn waves-effect waves-light");
+  };
 });
