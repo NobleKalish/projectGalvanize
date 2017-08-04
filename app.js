@@ -171,13 +171,18 @@ $(document).ready(function() {
     death();
     if (stealth >= data.result.random.data[1]) {
       $(".question").append("<h1>You try to sneak around him!</h1>");
-      $(".question").append("<p>He continues to speak as if you are still there. You continue to move around him. </p>");
+      $(".question").append("<p>He continues to speak as if you are still there. You continue to move around him. You move to a cliff above him. As he continues to walk and talk, you draw your weapon and attack him. he staggers back. He is clearly bleeding badly, but he is able to draw a dagger and throw it at you. he lands the dagger in your heart ending your life.</p>");
     } else {
-      $(".question").append("<h1>You rush towards him and attack him!</h1>");
-      $(".question").append("<p>He catches you and throws you back. On the ground he stands over you to finally end your life.</p>");
+      $(".question").append("<h1>You try to sneak around him</h1>");
+      $(".question").append("<p>As you walk around your heavy footsteps alert him to your posistion. He acts as if he cannot hear you. As you are about to jump on him he turns and throws a dagger at you. You stumble forwards and fall towards him ending your life. </p>");
     }
   });
-
+  $(".insult").click(function() {
+    death();
+    $(".question").append("<h1>You insult him as he turns to look at you.</h1>");
+    $(".question").append("<p>After calling him multiple names and insulting his mother and father he politely tells you that means nothing to him as he had already stabbed you and you were too busy insulting him to notice. Thus, ending your life.");
+  });
+  $
   function death() {
     $(".choice3").append($(".choiceButton2").text(""));
     $(".choiceButton2").removeClass("btn waves-effect waves-light 1 2 3");
