@@ -126,16 +126,25 @@ $(document).ready(function() {
     ending();
     $(".question").append("<h1>As he leads you away he turns aruond...</h1>");
     $(".question").append("<p>Truth be told, I am the leader of the bandits. I found you and wanted to play a little game. Since you are here, I realized I wanted to fight you now instead; prepare to fight!</p>");
+    $(".4").text("Rush and tackle the man.");
+    $(".5").text("Sneak away.");
+    $(".6").text("Insult the man.");
   });
   $(".2").click(function() {
     ending();
     $(".question").append("<h1>He looks at you confused only to tell you...</h1>");
     $(".question").append("<p>I was going to kill you when we reached the village, but I can do it right now!</p>");
+    $(".4").text("Pull out your weapon and prepare to fight!");
+    $(".5").text("Begin to undress.");
+    $(".6").text("Insult the man.");
   });
   $(".3").click(function() {
     ending();
     $(".question").append("<h1>He repeats what he said and appears annoyed and says...</h1>");
-    $(".question").append("<p></p>");
+    $(".question").append("<p>I guess if you're deaf I can attack you, and you can't scream for help.</p>");
+    $(".4").text("Ramble incoherently to the man while running at him!");
+    $(".5").text("Still pretend to be def.");
+    $(".6").text("Insult the man.");
   });
   function ending() {
     $(".choice2").append($(".choiceButton").text(""));
